@@ -90,8 +90,10 @@ public class CoberturaProjectAction extends Actionable implements ProminentProje
     }
 
     public void doGraph(StaplerRequest req, StaplerResponse rsp) throws IOException {
+        if (false) { // disable trend graphing
         if (getLastResult() != null)
             getLastResult().doGraph(req, rsp);
+        } // disable trend graphing
     }
 
     public void doIndex(StaplerRequest req, StaplerResponse rsp) throws IOException {

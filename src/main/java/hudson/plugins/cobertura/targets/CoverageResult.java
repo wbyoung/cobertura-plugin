@@ -422,6 +422,8 @@ public class CoverageResult implements Serializable {
      * Generates the graph that shows the coverage trend up to this report.
      */
     public void doGraph(StaplerRequest req, StaplerResponse rsp) throws IOException {
+        if (false) { // disable trend graphing
+
         if (ChartUtil.awtProblemCause != null) {
             // not available. send out error message
             rsp.sendRedirect2(req.getContextPath() + "/images/headless.png");
@@ -444,6 +446,8 @@ public class CoverageResult implements Serializable {
         }
 
         ChartUtil.generateGraph(req, rsp, createChart(dsb.build()), 500, 200);
+
+        }
     }
 
     private JFreeChart createChart(CategoryDataset dataset) {
